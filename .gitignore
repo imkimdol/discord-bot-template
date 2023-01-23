@@ -1,3 +1,6 @@
+# IntelliJ environment files
+.idea/
+
 # Logs
 logs
 *.log
