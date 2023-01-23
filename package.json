@@ -1,13 +1,9 @@
 {
   "name": "lodmik-bot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "lodmik <kimdol@proton.me>",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^14.7.1"
   }
