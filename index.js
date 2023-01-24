@@ -4,7 +4,6 @@ const glob = require('glob');
 
 // Require the necessary discord.js classes
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const fs = require('node:fs');
 const path = require('node:path');
 
 // Create a new client instance
@@ -17,7 +16,7 @@ const eventsPath = path.join(__dirname, 'events');
 const commandFiles = glob.sync('**/*.js', { cwd: commandsPath });
 const eventFiles = glob.sync('**/*.js', { cwd: eventsPath });
 
-// Register the commands
+// Command handler
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
 	const command = require(filePath);

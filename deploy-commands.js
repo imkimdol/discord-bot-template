@@ -2,7 +2,6 @@ require('dotenv').config();
 const glob = require('glob');
 
 const { REST, Routes } = require('discord.js');
-const fs = require('node:fs');
 
 const args = process.argv.slice(2)
 const commands = [];
