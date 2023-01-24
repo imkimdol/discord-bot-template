@@ -1,5 +1,6 @@
-// Require dotenv
+// Requires
 require('dotenv').config();
+const glob = require('glob');
 
 // Require the necessary discord.js classes
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
@@ -13,8 +14,8 @@ client.commands = new Collection();
 // Get list of command and event file names
 const commandsPath = path.join(__dirname, 'commands');
 const eventsPath = path.join(__dirname, 'events');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
+const commandFiles = glob.sync('**/*.js', { cwd: commandsPath });
+const eventFiles = glob.sync('**/*.js', { cwd: eventsPath });
 
 // Register the commands
 for (const file of commandFiles) {

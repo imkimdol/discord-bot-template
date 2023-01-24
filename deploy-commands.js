@@ -1,12 +1,13 @@
 require('dotenv').config();
+const glob = require('glob');
 
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
 
 const args = process.argv.slice(2)
 const commands = [];
-// Grab all the command files from the commands directory you created earlier
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+// Grab all the command files from the commands directory
+const commandFiles = glob.sync('**/*.js', { cwd: './commands' });
 
 // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 for (const file of commandFiles) {
