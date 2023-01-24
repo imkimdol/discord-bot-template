@@ -3,7 +3,7 @@ require('dotenv').config();
 const glob = require('glob');
 
 // Require the necessary discord.js classes
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const path = require('node:path');
 
 // Create a new client instance
