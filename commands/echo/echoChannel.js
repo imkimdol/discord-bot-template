@@ -14,16 +14,12 @@ module.exports = {
             option
                 .setName('channel')
                 .setDescription('The channel to echo into')
-                .setRequired(true))
-        .addBooleanOption(option =>
-            option
-                .setName('ephemeral')
-                .setDescription('Whether or not the echo should be ephemeral')),
+                .setRequired(true)),
     async execute(interaction) {
         const input     = interaction.options.getString('input');
-        const ephemeral = interaction.options.getBoolean('ephemeral') ?? false;
-        // TODO figure out how to send messages in different channel
-
-        await interaction.reply({ content: input, ephemeral: ephemeral });
+        const channel   = interaction.options.getChannel('channel');
+        
+        channel.send('input');
+        await interaction.reply({ content: 'Echoed the message to the specified channel!', ephemeral: true });
     },
 };
