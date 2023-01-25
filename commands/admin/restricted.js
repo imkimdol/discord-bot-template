@@ -4,8 +4,7 @@ require('dotenv').config();
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('restricted')
-        .setDescription('A command restricted to the bot owner.')
-        .setDMPermission(false),
+        .setDescription('A command restricted to the bot owner.'),
     async execute(interaction) {
         if (interaction.user.id === process.env.OWNER_ID) {
             await interaction.reply({ content: 'Command successful.', ephemeral: true });
