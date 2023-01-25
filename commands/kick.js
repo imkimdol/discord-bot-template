@@ -12,6 +12,9 @@ module.exports = {
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers | PermissionFlagsBits.KickMembers)
 		.setDMPermission(false),
     async execute(interaction) {
-		// TODO Add an execute function
+		const member = interaction.options.getMember('target');
+		member.kick();
+
+        await interaction.reply({ content: 'Kicked ' + member.displayName + '.', ephemeral: true });
 	},
 };
