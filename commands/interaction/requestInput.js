@@ -8,14 +8,11 @@ module.exports = {
         // TODO find out why this command is bugged
         interaction.reply('Please enter more input.').then(() => {
             const filter = m => interaction.user.id === m.author.id;
+            const collector = interaction.channel.createMessageCollector({ filter, time: 15000 });
         
-            interaction.channel.awaitMessages({ filter, time: 60000, max: 1, errors: ['time'] })
-                .then(messages => {
-                    interaction.followUp(`You've entered: ${messages.first().content}`);
-                })
-                .catch(() => {
-                    interaction.followUp('You did not enter any input!');
-                });
+            collector.on('collect', m => {
+                interaction.followUp(`You've entered: ${m.content}`);
+            });
         });
     },
 };
