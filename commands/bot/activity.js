@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, ActivityType } = require('discord.js');
-const { client } = require('../../index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -22,7 +21,7 @@ module.exports = {
                     { name: 'Listening to', value: ActivityType.Listening },
                     { name: 'Competing in', value: ActivityType.Competing },
                 )),
-    async execute(interaction) {
+    async execute(interaction, client) {
         const type = interaction.options.getInteger('type') ?? -1;
         const activity = interaction.options.getString('activity');
 

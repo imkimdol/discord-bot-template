@@ -1,4 +1,5 @@
 const { Events } = require('discord.js');
+const { client } = require('../index.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -13,7 +14,7 @@ module.exports = {
 		}
 
 		try {
-			await command.execute(interaction);
+			await command.execute(interaction, client);
 		} catch (error) {
 			console.error(`Error executing ${interaction.commandName}`);
 			console.error(error);

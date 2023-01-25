@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { client } = require('../../index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -16,7 +15,7 @@ module.exports = {
                 .setName('user')
                 .setDescription('The user to direct message to.')
                 .setRequired(true)),
-    async execute(interaction) {
+    async execute(interaction, client) {
         const input = interaction.options.getString('input');
         const user = interaction.options.getUser('user');
         

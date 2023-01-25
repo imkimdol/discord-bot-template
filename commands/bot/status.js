@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { client } = require('../../index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,7 +14,7 @@ module.exports = {
                     { name: 'Do Not Disturb', value: 'dnd' },
                     { name: 'Invisible', value: 'invisible' },
                 )),
-    async execute(interaction) {
+    async execute(interaction, client) {
         const status  = interaction.options.getString('status') ?? 'online';
         client.user.setStatus(status);
 
