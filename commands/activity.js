@@ -23,7 +23,7 @@ module.exports = {
                     { name: 'Competing in', value: ActivityType.Competing },
                 )),
     async execute(interaction) {
-        const type = interaction.options.getInteger('type') ?? 'Playing';
+        const type = interaction.options.getInteger('type') ?? -1;
         const activity = interaction.options.getString('activity');
 
         client.user.setActivity(activity, { type: type });
