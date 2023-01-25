@@ -7,7 +7,7 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const path = require('node:path');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMessageReactions] });
 client.commands = new Collection();
 module.exports = {client: client};
 
