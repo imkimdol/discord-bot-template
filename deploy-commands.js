@@ -13,6 +13,7 @@ for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	commands.push(command.data.toJSON());
 }
+// TODO find out how to stop index.js from executing when it is imported in command files
 
 // Construct and prepare an instance of the REST module
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
