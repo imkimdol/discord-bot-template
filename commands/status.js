@@ -16,7 +16,7 @@ module.exports = {
                     { name: 'Invisible', value: 'invisible' },
                 )),
     async execute(interaction) {
-        const status  = interaction.options.getString('status');
+        const status  = interaction.options.getString('status') ?? 'online';
         client.user.setStatus(status);
 
         await interaction.reply({ content: 'Set the status to ' + status + '!', ephemeral: true });
