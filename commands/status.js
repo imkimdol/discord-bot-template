@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { client } = require('../index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -18,6 +19,6 @@ module.exports = {
         const status  = interaction.options.getString('status');
         client.user.setStatus('status');
 
-        await interaction.reply({ content: 'Set the status to' + status + '!', ephemeral: true });
+        await interaction.reply({ content: 'Set the status to ' + status + '!', ephemeral: true });
     },
 };
