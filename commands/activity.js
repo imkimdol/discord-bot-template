@@ -4,6 +4,12 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('actvity')
         .setDescription('Sets the bot\'s visible activity.')
+        .addStringOption(option =>
+            option
+                .setName('activity')
+                .setDescription('What the visible activity should be.')
+                .setMaxLength(100)
+                .setRequired(true))
         .addIntegerOption(option =>
             option
                 .setName('type')
@@ -14,13 +20,7 @@ module.exports = {
                     { name: 'Streaming', value: ActivityType.Streaming },
                     { name: 'Listening to', value: ActivityType.Listening },
                     { name: 'Competing in', value: ActivityType.Competing },
-                ))
-        .addStringOption(option =>
-            option
-                .setName('activity')
-                .setDescription('What the visible activity should be.')
-                .setMaxLength(100)
-                .setRequired(true)),
+                )),
     async execute(interaction) {
         const type = interaction.options.getInteger('type') ?? 'Playing';
         const activity = interaction.options.getString('activity');
