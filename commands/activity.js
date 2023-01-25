@@ -3,7 +3,7 @@ const { client } = require('../index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('actvity')
+        .setName('activity')
         .setDescription('Sets the bot\'s visible activity.')
         .addStringOption(option =>
             option
