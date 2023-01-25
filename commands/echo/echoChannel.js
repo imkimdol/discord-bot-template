@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('echo')
+        .setName('echo_channel')
         .setDescription('Replies with your input!')
         .addStringOption(option =>
             option
