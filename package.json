@@ -13,5 +13,8 @@
     "glob": "^8.1.0",
     "utf-8-validate": "^6.0.1",
     "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
   }
 }
