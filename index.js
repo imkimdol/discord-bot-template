@@ -9,6 +9,7 @@ const path = require('node:path');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.commands = new Collection();
+module.exports = {client: client};
 
 // Get list of command and event file names
 const commandsPath = path.join(__dirname, 'commands');
