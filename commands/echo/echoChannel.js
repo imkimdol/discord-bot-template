@@ -16,10 +16,10 @@ module.exports = {
                 .setDescription('The channel to echo into')
                 .setRequired(true)),
     async execute(interaction) {
-        const input     = interaction.options.getString('input');
-        const channel   = interaction.options.getChannel('channel');
+        const input   = interaction.options.getString('input');
+        const channel = interaction.options.getChannel('channel');
         
-        channel.send('input');
+        channel.send(input);
         await interaction.reply({ content: 'Echoed the message to the specified channel!', ephemeral: true });
     },
 };

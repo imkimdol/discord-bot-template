@@ -17,7 +17,7 @@ module.exports = {
                 )),
     async execute(interaction) {
         const status  = interaction.options.getString('status');
-        client.user.setStatus('status');
+        client.user.setStatus(status);
 
         await interaction.reply({ content: 'Set the status to ' + status + '!', ephemeral: true });
     },
