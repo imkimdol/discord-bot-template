@@ -5,6 +5,7 @@ module.exports = {
         .setName('request_input')
         .setDescription('A command that requests more input.'),
     async execute(interaction) {
+        // TODO find out why this command is bugged
         interaction.reply('Please enter more input.').then(() => {
             const filter = m => interaction.user.id === m.author.id;
         
