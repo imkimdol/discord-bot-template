@@ -37,8 +37,9 @@ module.exports = {
         const collector = message.createMessageComponentCollector({ componentType: ComponentType.Button, time: 15000 });
         collector.on('collect', async i => {
             if (i.user.id === interaction.user.id) {
-                await i.update({ content: 'Clicked!', components: [rowDisabled] });
+                await i.update({ content: 'Clicked!', components: [row] });
                 i.followUp(`<@${i.user.id}> clicked on the ${i.customId} button.`);
+                collector.stop();
             } else {
                 i.reply({ content: 'These buttons aren\'t for you!', ephemeral: true });
             }
