@@ -32,7 +32,6 @@ module.exports = {
             );
 
         const message = await interaction.reply({ content: 'I think you should.', components: [row] });
-        console.log(typeof message);
 
         // Set up collector
         const collector = message.createMessageComponentCollector({ componentType: ComponentType.Button, time: 15000 });
